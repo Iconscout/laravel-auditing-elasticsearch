@@ -25,7 +25,7 @@ class IndexCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'audit:es-index';
+    protected $signature = 'auditing:es-index';
 
     /**
      * The console command description.

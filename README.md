@@ -1,6 +1,18 @@
+# Auditing Elasticsearch Driver
+
+[![Latest Unstable Version](https://poser.pugx.org/iconscout/laravel-auditing-elasticsearch/v/unstable)](https://packagist.org/packages/iconscout/laravel-auditing-elasticsearch) [![Total Downloads](https://poser.pugx.org/iconscout/laravel-auditing-elasticsearch/downloads)](https://packagist.org/packages/iconscout/laravel-auditing-elasticsearch) [![License](https://poser.pugx.org/iconscout/laravel-auditing-elasticsearch/license)](https://packagist.org/packages/iconscout/laravel-auditing-elasticsearch)
+
 This driver provides the ability to save your model audits in elasticsearch.
 
-### Installation
+## Contents
+
+* [Installation](#installation)
+* [Setup](#setup)
+* [Console commands](#console-commands)
+* [Usage](#usage)
+* [Donate](#donate)
+
+## Installation
 
 This driver requires that you are using `owen-it/laravel-auditing: ^6.0`. Provided this is fulfilled,
 you can install the driver like so:
@@ -9,7 +21,7 @@ you can install the driver like so:
 composer require iconscout/laravel-auditing-elasticsearch
 ```
 
-### Setup
+## Setup
 
 You need to add the following config entries in config/audit.php if you need to change the default behaviour of the driver.
 The `queue` key of the config file should look like so:
@@ -61,7 +73,18 @@ The `drivers` key of the config file should look like so:
     ...
 ```
 
-### Usage
+## Console commands
+
+Available artisan commands are listed below:
+
+Command | Arguments | Description
+--- | ---
+auditing:es-index | Index all of the model's records into the search index.
+auditing:es-delete | Delete all of the model's records from the index.
+
+For detailed description and all available options run `php artisan help [command]` in the command line.
+
+## Usage
 
 You can use the driver in any Auditable model like so:
 
@@ -88,5 +111,9 @@ class SomeModel extends Model implements AuditableContract
     // ...
 }
 ```
+
+## Donate
+
+:coffee: If you like my package, it'd be nice of you [to buy me a cup of coffee](https://www.paypal.me/rankarpan).
 
 More information on using customer drivers with owen-it/laravel-auditing can be found on their [homepage](http://laravel-auditing.com/docs/6.0/audit-drivers)

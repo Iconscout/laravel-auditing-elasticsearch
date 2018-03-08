@@ -25,7 +25,7 @@ class DeleteCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'audit:es-delete';
+    protected $signature = 'auditing:es-delete';
 
     /**
      * The console command description.
