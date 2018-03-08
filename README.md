@@ -10,7 +10,7 @@ This driver provides the ability to save your model audits in elasticsearch.
 * [Setup](#setup)
 * [Console commands](#console-commands)
 * [Usage](#usage)
-* [Donate](#donate)
+* [Donations](#donations)
 
 ## Installation
 
@@ -150,8 +150,13 @@ $all = $icon->esAudits;
 $all = $icon->esAudits($page = 1, $perPage = 10);
 ```
 
-## Donate
+## Donations
 
-:coffee: If you like my package, it'd be nice of you [to buy me a cup of coffee](https://www.paypal.me/rankarpan).
+> Help keeping the project development going, by [contributing](https://github.com/Iconscout/laravel-auditing-elasticsearch/graphs/contributors) or donating a little. 
+> Thanks in advance.
+
+Donate directly via [Paypal](https://www.paypal.me/rankarpan)
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/rankarpan) 
 
 More information on using customer drivers with owen-it/laravel-auditing can be found on their [homepage](http://laravel-auditing.com/docs/6.0/audit-drivers)
