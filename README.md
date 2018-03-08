@@ -86,7 +86,7 @@ For detailed description and all available options run `php artisan help [comman
 
 ## Usage
 
-You can use the driver in any Auditable model like so:
+You can use the ElasticSearch driver in any Auditable model like so in order to store audit records in elasticsearch:
 
 ```
 <?php
@@ -110,6 +110,44 @@ class SomeModel extends Model implements AuditableContract
 
     // ...
 }
+```
+
+You can use the ElasticSearchAuditable trait in any Auditable model like so in order to retrieving Retrieving audit records records from elasticsearch:
+
+```
+<?php
+namespace App\Models;
+
+use Iconscout\Auditing\Drivers\ElasticSearch;
+use Iconscout\Auditing\Traits\ElasticSearchAuditable;
+use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditable;
+use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
+
+class SomeModel extends Model implements AuditableContract
+{
+    use Auditable, ElasticSearchAuditable;
+
+    /**
+     * ElasticSearch Audit Driver
+     *
+     * @var Iconscout\Auditing\Drivers\ElasticSearch
+     */
+    protected $auditDriver = ElasticSearch::class;
+
+    // ...
+}
+```
+
+```
+// Get first available Icon
+$icon = Icon::first();
+
+// Get all associated Audits
+$all = $icon->esAudits;
+
+// Get all associated Audits via parameters ($page & $perPage)
+$all = $icon->esAudits($page = 1, $perPage = 10);
 ```
 
 ## Donate
