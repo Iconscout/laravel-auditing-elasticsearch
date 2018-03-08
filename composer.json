@@ -1,0 +1,44 @@
+{
+    "name": "iconscout/laravel-auditing-elasticsearch",
+    "description": "A elasticsearch driver for the owen-it/laravel-auditing package. Allows storage of the audits in elasticsearch.",
+    "keywords": [
+        "accountability",
+        "audit",
+        "auditing",
+        "changes",
+        "eloquent",
+        "history",
+        "log",
+        "logging",
+        "observer",
+        "laravel",
+        "lumen",
+        "record",
+        "revision",
+        "tracking",
+        "elasticsearch",
+        "es"
+    ],
+    "type": "package",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/iconscout/laravel-auditing-elasticsearch/issues",
+        "source": "https://github.com/iconscout/laravel-auditing-elasticsearch"
+    },
+    "authors": [
+        {
+            "name": "Arpan Rank",
+            "email": "arpan@iconscout.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "owen-it/laravel-auditing": "^6.0",
+        "elasticsearch/elasticsearch": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Iconscout\\Auditing\\": "src/"
+        }
+    }
+}
