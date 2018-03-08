@@ -40,5 +40,12 @@
         "psr-4": {
             "Iconscout\\Auditing\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Iconscout\\Auditing\\ElasticSearchAuditingServiceProvider"
+            ]
+        }
     }
 }
