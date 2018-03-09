@@ -19,40 +19,18 @@ use Illuminate\Database\Eloquent\Collection;
 
 trait ElasticSearchAuditable
 {
-    /**
-     * @var string
-     */
-    protected $client = null;
-
-    /**
-     * @var string
-     */
-    protected $index = null;
-
-    /**
-     * @var string
-     */
-    protected $type = null;
-
-    /**
-     * ElasticSearch constructor.
-     */
-    public function __construct()
+    public function esAudits($page = 1, $perPage = 10, $sort = 'latest')
     {
-        parent::__construct();
-
-        $this->client = ClientBuilder::create()->setHosts(Config::get('audit.drivers.es.client.hosts', ['localhost:9200']))->build();
-        $this->index = Config::get('audit.drivers.es.index', 'laravel_auditing');
-        $this->type = Config::get('audit.drivers.es.type', 'audits');
-    }
-
-    public function esAudits($page = 1, $perPage = 10)
-    {
+        $client = ClientBuilder::create()->setHosts(Config::get('audit.drivers.es.client.hosts', ['localhost:9200']))->build();
+        $index = Config::get('audit.drivers.es.index', 'laravel_auditing');
+        $type = Config::get('audit.drivers.es.type', 'audits');
+           
         $from = ($page - 1) * $perPage;
+        $order = $sort === 'latest' ? 'desc' : 'asc';
 
         $params = [
-            'index' => $this->index,
-            'type' => $this->type,
+            'index' => $index,
+            'type' => $type,
             'size' => $perPage,
             'from' => $from,
             'body' => [
@@ -74,14 +52,14 @@ trait ElasticSearchAuditable
                 ],
                 'sort' => [
                     'created_at' => [
-                        'order' => 'desc'
+                        'order' => $order
                     ]
                 ],
                 'track_scores' => true
             ]
         ];
 
-        $results = $this->client->search($params);
+        $results = $client->search($params);
         $hits = $results['hits'];
 
         $collection = Collection::make();
