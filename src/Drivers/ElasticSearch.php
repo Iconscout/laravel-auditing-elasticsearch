@@ -13,7 +13,7 @@
 
 namespace Iconscout\Auditing\Drivers;
 
-use Uuid, Carbon\Carbon;
+use Webpatser\Uuid\Uuid, Carbon\Carbon;
 use Elasticsearch\ClientBuilder;
 use Illuminate\Support\Facades\Config;
 use Iconscout\Auditing\Jobs\AuditIndexQueuedModels;

@@ -34,7 +34,8 @@
     "require": {
         "php": ">=7.0",
         "owen-it/laravel-auditing": "^6.0",
-        "elasticsearch/elasticsearch": "6.*"
+        "elasticsearch/elasticsearch": "6.*",
+        "webpatser/laravel-uuid": "^3.0"
     },
     "autoload": {
         "psr-4": {
