@@ -31,12 +31,20 @@
             "email": "arpan@iconscout.com"
         }
     ],
+    "repositories": [
+        {
+            "packagist.org": false,
+            "type": "vcs",
+            "url": "https://github.com/rankarpan/laravel-uuid"
+        }
+    ],
     "require": {
         "php": ">=7.0",
         "owen-it/laravel-auditing": "^6.0",
         "elasticsearch/elasticsearch": "6.*",
-        "webpatser/laravel-uuid": "^3.0"
+        "webpatser/laravel-uuid": "dev-master"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Iconscout\\Auditing\\": "src/"
