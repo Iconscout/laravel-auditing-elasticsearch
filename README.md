@@ -14,7 +14,7 @@ This driver provides the ability to save your model audits in elasticsearch.
 
 ## Installation
 
-This driver requires that you are using `owen-it/laravel-auditing: ^6.0`. Provided this is fulfilled,
+This driver requires that you are using `owen-it/laravel-auditing: ^7.0`. Provided this is fulfilled,
 you can install the driver like so:
 
 ```
