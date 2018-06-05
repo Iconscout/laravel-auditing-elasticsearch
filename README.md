@@ -159,4 +159,4 @@ Donate directly via [Paypal](https://www.paypal.me/rankarpan)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/rankarpan) 
 
-More information on using customer drivers with owen-it/laravel-auditing can be found on their [homepage](http://laravel-auditing.com/docs/6.0/audit-drivers)
+More information on using customer drivers with owen-it/laravel-auditing can be found on their [homepage](http://laravel-auditing.com/docs/7.0/audit-drivers)
