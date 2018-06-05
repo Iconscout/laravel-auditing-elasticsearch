@@ -13,16 +13,16 @@
 
 namespace Iconscout\Auditing\Drivers;
 
-use Webpatser\Uuid\Uuid, Carbon\Carbon;
+use Carbon\Carbon;
 use Elasticsearch\ClientBuilder;
 use Illuminate\Support\Facades\Config;
 use Iconscout\Auditing\Jobs\AuditIndexQueuedModels;
 use Iconscout\Auditing\Jobs\AuditDeleteQueuedModels;
-
 use OwenIt\Auditing\Contracts\Audit;
 use OwenIt\Auditing\Contracts\Auditable;
 use OwenIt\Auditing\Contracts\AuditDriver;
 use OwenIt\Auditing\Models\Audit as AuditModel;
+use Ramsey\Uuid\Uuid;
 
 class ElasticSearch implements AuditDriver
 {
@@ -146,7 +146,7 @@ class ElasticSearch implements AuditDriver
         $params = [
             'index' => $this->index,
             'type' => $this->type,
-            'id' => Uuid::generate(1, '02:42:ac:14:00:03')->string,
+            'id' => Uuid::uuid4(),
             'body' => $model
         ];
 
