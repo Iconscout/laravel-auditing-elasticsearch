@@ -34,7 +34,7 @@ class ElasticSearchAuditingServiceProvider extends ServiceProvider
             ]);
 
             $this->publishes([
-                __DIR__.'/../config/audit.php' => $this->app['path.config'].DIRECTORY_SEPARATOR.'audit.php',
+                __DIR__.'/config/audit.php' => $this->app['path.config'].DIRECTORY_SEPARATOR.'audit.php',
             ]);
         }
     }
