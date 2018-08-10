@@ -150,7 +150,9 @@ class ElasticSearch implements AuditDriver
             'body' => $model
         ];
 
-        return $this->client->index($params);
+        try {
+            return $this->client->index($params);
+        } catch (\Exception $e) {}
     }
 
     public function searchAuditDocument($model)
